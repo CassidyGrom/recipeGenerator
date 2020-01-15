@@ -39,8 +39,8 @@ $("#add-integrediant").on("click", function(event) {
 });
 
 $(document).on("click", ".city-btn", function(event) {
-  var city = $(this).text();
-  var queryURL = buildQueryURL(city);
+  var ingredient = $(this).text();
+  var queryURL = buildQueryURL(ingredient);
   console.log(queryURL);
 });
 
@@ -49,23 +49,19 @@ $(document).on("click", ".city-btn", function(event) {
  * @returns {string} URL for WEATHER API based on form inputs
  */
 
-function buildQueryURL(city) {
-  console.log(city);
+function buildQueryURL(ingredient) {
+  console.log(ingredient);
   // queryURL is the url we'll use to query the API
-  var queryURL = "api.openweathermap.org";
+  var queryURL = "http://www.recipepuppy.com/api/?i=" + ingredient;
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+  });
 
-  // Begin building an object to contain our API call's query parameters
-  // Set the API key
-  var queryParams = { "api-key": "327fd5e4c25354dfdd72fbe1fb823d1d" };
-
-  // Grab text the user typed into the search input, add to the queryParams object
-  queryParams.q = city;
-  console.log(queryParams);
-
-  // Logging the URL so we have access to it for troubleshooting
-  console.log("---------------\nURL: " + queryURL + "\n---------------");
-  console.log(queryURL + $.param(queryParams));
-  return queryURL + "?" + $.param(queryParams);
+  return queryURL;
+  console.log(queryURL);
 }
 
 // FOR LATERS
