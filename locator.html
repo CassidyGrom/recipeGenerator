@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+    <title>Store Locator</title>
+  </head>
+  <body>
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <h1 class="is-size-2"><i class="fas fa-globe-americas"></i>Store Locator</h1>
+        </div>
+        <div class="navbar-end">
+          <a class="navbar-item">
+            Recipe Generator
+          </a>
+          <a class="navbar-item">
+            Store Locator
+          </a>
+          <a class="navbar-item">
+            Dashboard
+          </a>
+        </div>
+      </div>
+        <main>
+          <div class="container">
+            <form>
+              <input id="search-input" placeholder="Search" />
+              <button id="search-btn">Search for city</button>
+            </form>
+            <div class="map-container">
+              <div id='map'></div>
+            </div>
+          </div>
+        </main>
+      <script src='https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js'></script>
+    <script src="locatorScript.js"></script>
+  </body>
+</html>
