@@ -1,40 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Recipe Generator</title>
-    <style type="text/css">
-      button,
-      div,
-      form,
-      input {
-        margin: 10px;
-      }
-    </style>
-  </head>
 
-  <body>
-    <div class="container">
-      <h1>Integredient Search</h1>
+<head>
+  <meta charset="utf-8" />
+  <title>Recipe Generator</title>
+  <style type="text/css">
+    button,
+    div,
+    form,
+    input {
+      margin: 10px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
 
-      <!-- Rendered Buttons will get Dumped Here  -->
+<body>
+  <!-- Navbar -->
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      <h1 class="is-size-2"><i class="fas fa-utensils"></i>Recipe Generator</h1>
+    </div>
+    <div class="navbar-end">
+      <a class="navbar-item" href="#">
+        Recipe Generator
+      </a>
+      <a class="navbar-item" href="locator.html">
+        Store Locator
+      </a>
+      <a class="navbar-item" href="dashboard.html">
+        Dashboard
+      </a>
+    </div>
+  </div>
 
-      <form id="food-form">
-        <label for="food-input">Add an ingredient, Yo!</label>
-        <input type="text" id="food-input" />
-        <br/>
-        <!-- Button triggers new location to be added -->
-        <input id="add-integredient" type="submit" value="Add an ingredient, Yo!" />
-      </form>   
+  <div class="container">
+    <h1>Integredient Search</h1>
 
-      <!-- put recipe list here -->
-      <div id="recipe-dump"></div>
+    <!-- Rendered Buttons will get Dumped Here  -->
+
+    <form id="food-form">
+      <label for="food-input">Add an ingredient, Yo!</label>
+      <input type="text" id="food-input" />
+      <br />
+      <!-- Button triggers new location to be added -->
+      <input id="add-integredient" type="submit" value="Add an ingredient, Yo!" />
+    </form>
+
+    <!-- put recipe list here -->
+    <div class="container" id="recipe-dump">
+      <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">John Smith</p>
+              <p class="subtitle is-6">@johnsmith</p>
+            </div>
+          </div>
+
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+            <a href="#">#css</a> <a href="#">#responsive</a>
+            <br>
+            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- jQuery JS -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <!-- Code to the JavaScript File -->
     <script src="generatorScript.js"></script>
-    </body>
-    </div>
-  </body>
+</body>
+</div>
+</body>
+
 </html>
