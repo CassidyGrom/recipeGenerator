@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
-    />
-    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'></script>
-<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css' type='text/css' />
-    <script
-      defer
-      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
-    ></script>
-    <title>Store Locator</title>
-  </head>
-  <body>
-      <div class="navbar-menu">
-        <div class="navbar-start">
-          <h1 class="is-size-2"><i class="fas fa-globe-americas"></i>Store Locator</h1>
-        </div>
-        <div class="navbar-end">
-          <a class="navbar-item" href="index.html">
-            Recipe Generator
-          </a>
-          <a class="navbar-item" href="#">
-            Store Locator
-          </a>
-          <a class="navbar-item" href="dashboard.html">
-            Dashboard
-          </a>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
+  <script
+    src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'></script>
+  <link rel='stylesheet'
+    href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css'
+    type='text/css' />
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <title>Store Locator</title>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="nav navstyle">
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <h1 class="is-size-2"><i class="fas fa-globe-americas"></i>Store Locator</h1>
       </div>
-        <main>
-          <div class="is-fullhd">
-            <div class="map-container">
-              <div id="map"></div>
-            </div>
-          </div>
-        </main c>
-      <script src='https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js'></script>
-    <script src="locatorScript.js"></script>
-  </body>
+      <div class="navbar-end">
+        <a class="navbar-item" href="index.html">
+          Recipe Generator
+        </a>
+        <a class="navbar-item" href="#">
+          Store Locator
+        </a>
+        <a class="navbar-item" href="dashboard.html">
+          Dashboard
+        </a>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="is-fullhd">
+      <div class="map-container">
+        <div id="map"></div>
+      </div>
+    </div>
+  </main c>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js'></script>
+  <script src="locatorScript.js"></script>
+</body>
+
 </html>
