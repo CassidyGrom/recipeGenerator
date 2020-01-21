@@ -34,11 +34,16 @@
     <div class="column is-one-third">
       <h1>Ingredient Search</h1>
       <form id="food-form">
-        <label for="food-input">Add an ingredient, Yo!</label>
+        <label for="food-input">What's in the fridge?</label>
         <input type="text" id="food-input" />
-        <input id="add-ingredient" type="submit" value="Mix In!" />
+        <input id="add-ingredient" type="button" onclick="addIngredient()" value="Add" />
+        <input id="searchRecipesbtn" type="button" onclick="searchRecipes()" value="Search" />
       </form>
+      <div id="ingredientBox">
+
+      </div>
     </div>
+
 
     <!-- put recipe list here -->
     <div class="column is-three-fifths" id="recipe-dump">

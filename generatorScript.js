@@ -1,18 +1,46 @@
 var $foodInput = $("#food-input");
 var $foodForm = $("#food-form");
 
-function handleFormSubmit(event) {
-  console.log(event);
 
-  event.preventDefault();
+//$foodForm.on("submit", handleFormSubmit);
+//$foodForm.on("submit", addIngredient);
 
+function addIngredient() {
   var searchInput = $foodInput.val();
-
   if (!searchInput) {
-    return false;
+    return;
   }
 
-  var queryURL = `https://alex-rosencors.herokuapp.com/?url=http://www.recipepuppy.com/api/?i=${searchInput}`;
+  var divIngredient = generateDiv('ingredientButton');
+  var lbl = $('<label />', {
+    html: searchInput,
+    id: "lblIngredient"
+  });
+  divIngredient.append(lbl);
+
+  var divDelete= generateDiv('delete is-small');
+  divDelete.click(function () {
+    divIngredient.remove();
+  });
+  divIngredient.append(divDelete);
+  $('#ingredientBox').append(divIngredient);
+}
+
+function searchRecipes() {
+
+  var searchValue = "";
+
+  var x = document.getElementById("ingredientBox").querySelectorAll(".ingredientButton"); 
+  x.forEach(function(z) {
+    var lbl = z.querySelector('#lblIngredient');
+    var txt = lbl.innerHTML;
+    searchValue += txt + ',';
+  });
+
+  if (!searchValue) {return;}
+  searchValue = searchValue.substring(0, searchValue.length - 1);
+
+  var queryURL = `https://alex-rosencors.herokuapp.com/?url=http://www.recipepuppy.com/api/?i=${searchValue}`;
   console.log(queryURL);
   $.ajax({
     url: queryURL,
@@ -32,18 +60,11 @@ function handleFormSubmit(event) {
   });
 }
 
-$foodForm.on("submit", handleFormSubmit);
-
 function appendRecipe(title, link, ingredients, thumbnail) {
-  // var alink = $('<a />', {
-  //   href: link,
-  //   target: "_blank"
-  // });
 
   var divCard = $('<div />', {
     class: "card",
   });
-  //alink.append(divCard);
 
   var divCardContent = generateDiv('card-content');
   divCard.append(divCardContent);

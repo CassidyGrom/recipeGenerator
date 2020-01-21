@@ -33,3 +33,11 @@
 .clickable {
   cursor: pointer;
 }
+
+.ingredientButton {
+  margin: 5;
+  width: 100px;
+  padding: 6px;
+  background-color: burlywood;
+  border-radius: 8px;
+}
