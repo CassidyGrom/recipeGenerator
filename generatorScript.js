@@ -1,9 +1,14 @@
 var $foodInput = $("#food-input");
-var $foodForm = $("#food-form");
 
+var foodinp = document.getElementById("food-input");
 
-//$foodForm.on("submit", handleFormSubmit);
-//$foodForm.on("submit", addIngredient);
+foodinp.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    addIngredient();
+    $foodInput.val('');
+  }
+});
 
 function addIngredient() {
   var searchInput = $foodInput.val();
@@ -13,7 +18,7 @@ function addIngredient() {
 
   var divIngredient = generateDiv('ingredientButton');
   var lbl = $('<label />', {
-    html: searchInput,
+    html: searchInput + '  ',
     id: "lblIngredient"
   });
   divIngredient.append(lbl);
@@ -24,6 +29,7 @@ function addIngredient() {
   });
   divIngredient.append(divDelete);
   $('#ingredientBox').append(divIngredient);
+  $foodInput.val('');
 }
 
 function searchRecipes() {
@@ -83,12 +89,14 @@ function appendRecipe(title, link, ingredients, thumbnail) {
   });
   divMediaLeft.append(figImage);
 
-  var imgThumbnail = $('<img />', {
-    src: thumbnail,
-    alt: "Placeholder image"
-  });
-  figImage.append(imgThumbnail);
-
+  if (thumbnail) {
+    var imgThumbnail = $('<img />', {
+      src: thumbnail,
+      alt: "Placeholder image"
+    });
+    figImage.append(imgThumbnail);
+  
+  }
   var divMediaContent = generateDiv('media-content clickable');
   divMediaContent.click(function () {
     window.open(link, '_blank');

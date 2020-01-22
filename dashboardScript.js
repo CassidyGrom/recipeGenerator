@@ -56,11 +56,13 @@ function appendRecipe(title, link, ingredients, thumbnail) {
   });
   divMediaLeft.append(figImage);
 
-  var imgThumbnail = $('<img />', {
-    src: thumbnail,
-    alt: "Placeholder image"
-  });
-  figImage.append(imgThumbnail);
+  if (thumbnail) {
+    var imgThumbnail = $('<img />', {
+      src: thumbnail,
+      alt: "Placeholder image"
+    });
+    figImage.append(imgThumbnail);
+  }
 
   var divMediaContent = generateDiv('media-content clickable');
   divMediaContent.click(function () {
