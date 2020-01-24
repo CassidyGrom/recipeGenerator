@@ -1,3 +1,15 @@
+//nav bar java
+$(document).ready(function() {
+  // Check for click events on the navbar burger icon
+  $(".navbar-burger").click(function() {
+    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+    $(".navbar-burger").toggleClass("is-active");
+    $(".navbar-menu").toggleClass("is-active");
+  });
+});
+
+//end nav bar java
+
 var $foodInput = $("#food-input");
 
 var foodinp = document.getElementById("food-input");
@@ -6,7 +18,7 @@ foodinp.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     addIngredient();
-    $foodInput.val('');
+    $foodInput.val("");
   }
 });
 
@@ -16,34 +28,37 @@ function addIngredient() {
     return;
   }
 
-  var divIngredient = generateDiv('ingredientButton');
-  var lbl = $('<label />', {
-    html: searchInput + '  ',
+  var divIngredient = generateDiv("ingredientButton");
+  var lbl = $("<label />", {
+    html: searchInput + "  ",
     id: "lblIngredient"
   });
   divIngredient.append(lbl);
 
-  var divDelete= generateDiv('delete is-small');
-  divDelete.click(function () {
+  var divDelete = generateDiv("delete is-small");
+  divDelete.click(function() {
     divIngredient.remove();
   });
   divIngredient.append(divDelete);
-  $('#ingredientBox').append(divIngredient);
-  $foodInput.val('');
+  $("#ingredientBox").append(divIngredient);
+  $foodInput.val("");
 }
 
 function searchRecipes() {
-
   var searchValue = "";
 
-  var x = document.getElementById("ingredientBox").querySelectorAll(".ingredientButton"); 
+  var x = document
+    .getElementById("ingredientBox")
+    .querySelectorAll(".ingredientButton");
   x.forEach(function(z) {
-    var lbl = z.querySelector('#lblIngredient');
+    var lbl = z.querySelector("#lblIngredient");
     var txt = lbl.innerHTML;
-    searchValue += txt + ',';
+    searchValue += txt + ",";
   });
 
-  if (!searchValue) {return;}
+  if (!searchValue) {
+    return;
+  }
   searchValue = searchValue.substring(0, searchValue.length - 1);
 
   var queryURL = `https://alex-rosencors.herokuapp.com/?url=http://www.recipepuppy.com/api/?i=${searchValue}`;
@@ -51,11 +66,11 @@ function searchRecipes() {
   $.ajax({
     url: queryURL,
     method: "GET"
-  }).then(function (response) {
+  }).then(function(response) {
     console.log(response);
     // console.log(response.results[0]);
     var results = response.results;
-    $('#recipe-dump').empty();
+    $("#recipe-dump").empty();
     for (var i = 0; i < results.length; i++) {
       var title = results[i].title;
       var ingredients = results[i].ingredients;
@@ -67,73 +82,70 @@ function searchRecipes() {
 }
 
 function appendRecipe(title, link, ingredients, thumbnail) {
-
-  var divCard = $('<div />', {
-    class: "card",
+  var divCard = $("<div />", {
+    class: "card"
   });
 
-  var divCardContent = generateDiv('card-content');
+  var divCardContent = generateDiv("card-content");
   divCard.append(divCardContent);
 
-  divMedia = generateDiv('media');
+  divMedia = generateDiv("media");
   divCardContent.append(divMedia);
 
-  var divMediaLeft = generateDiv('media-left clickable');
-  divMediaLeft.click(function () {
-    window.open(link, '_blank');
+  var divMediaLeft = generateDiv("media-left clickable");
+  divMediaLeft.click(function() {
+    window.open(link, "_blank");
   });
   divMedia.append(divMediaLeft);
 
-  var figImage = $('<figure />', {
+  var figImage = $("<figure />", {
     class: "image is-48x48"
   });
   divMediaLeft.append(figImage);
 
   if (thumbnail) {
-    var imgThumbnail = $('<img />', {
+    var imgThumbnail = $("<img />", {
       src: thumbnail,
       alt: "Placeholder image"
     });
     figImage.append(imgThumbnail);
-  
   }
-  var divMediaContent = generateDiv('media-content clickable');
-  divMediaContent.click(function () {
-    window.open(link, '_blank');
+  var divMediaContent = generateDiv("media-content clickable");
+  divMediaContent.click(function() {
+    window.open(link, "_blank");
   });
   divMedia.append(divMediaContent);
 
-  var divMediaRight = generateDiv('media-right');
+  var divMediaRight = generateDiv("media-right");
   divMedia.append(divMediaRight);
 
-  var btnSave = $('<button />', {
+  var btnSave = $("<button />", {
     class: "ButtonSave",
-    html: "Add",
+    html: "Add"
   });
-  btnSave.click(function () {
+  btnSave.click(function() {
     saveAsFavorite(title, link, ingredients, thumbnail);
   });
 
   divMediaRight.append(btnSave);
 
-  var pTitle = $('<p />', {
+  var pTitle = $("<p />", {
     class: "title is-4",
     html: title
   });
   divMediaContent.append(pTitle);
 
-  var divContent = $('<div />', {
+  var divContent = $("<div />", {
     class: "content",
     html: ingredients
   });
   divCardContent.append(divContent);
 
-
-  $('#recipe-dump').append(divCard);
+  $("#recipe-dump").append(divCard);
 }
 
 function generateDiv(className) {
-  var div = $('<div />', {
+  var div = $("<div />", {
     class: className
   });
   return div;
@@ -155,4 +167,3 @@ function saveAsFavorite(title, link, ingredients, thumbnail) {
   var strValue = JSON.stringify(arr);
   localStorage.setItem(localStorageKey, strValue);
 }
-
