@@ -9,6 +9,10 @@
   height: 100vh;
 }
 
+.navbar {
+  background-color: rgba(0, 0, 0, 0);
+}
+
 #add-ingredient {
   border: solid #f0ead6 4px;
   /* width: 10vw; */

@@ -17,7 +17,7 @@ Need one more ingredient or spice to add the finishing touch? Search for a local
 ## Authors
 
 - **Alyssa Tung**
-- **Rachel Laconianni**
+- **Rachel Iaconianni**
 - **Cassidy Grom**
 
 ## Acknowledgments
