@@ -1,5 +1,3 @@
-
-
 .mapbody {
   margin: 0;
   padding: 0;
@@ -10,6 +8,30 @@
   position: relative;
   height: 100vh;
 }
+
+#add-ingredient {
+  border: solid #f0ead6 4px;
+  /* width: 10vw; */
+  min-width: 50px;
+  border-radius: 10px;
+  background-color: #f0ead6;
+  color: black;
+  min-height: 30px;
+  margin-left: 20px;
+}
+
+#searchRecipesbtn {
+  border: solid green 4px;
+  position: absolute;
+  bottom: 10vh;
+  /* width: 10vw; */
+  min-width: 100px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  color: green;
+  min-height: 30px;
+}
+
 
 #map {
   position: absolute;
@@ -41,7 +63,7 @@
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 6px;
-  background-color:rgb(59, 138, 63); 
+  background-color: rgb(59, 138, 63);
   border-radius: 8px;
 }
 
@@ -51,23 +73,24 @@
 }
 
 .ingredientBox {
-  width:100px;
+  width: 100px;
   border-spacing: 10px;
 }
 
 html {
-  height:100%;
+  height: 100%;
 }
 
-body{
-  height:100%;
-  background-image:url('1373.jpg');
-  background-attachment:fixed;
+body {
+  height: 100%;
+  background-image: url('1373.jpg');
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.navbar-menu, .navbar-item {
+.navbar-menu,
+.navbar-item {
   color: whitesmoke;
   opacity: 1;
 }
@@ -78,6 +101,7 @@ body{
   margin-bottom: 5px;
 }
 
-label, h1 {
-  color:whitesmoke;
+label,
+h1 {
+  color: whitesmoke;
 }
