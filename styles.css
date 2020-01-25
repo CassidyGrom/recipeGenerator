@@ -22,18 +22,20 @@
   color: black;
   min-height: 30px;
   margin-left: 20px;
+  font-weight: bold;
 }
 
 #searchRecipesbtn {
-  border: solid green 4px;
+  border: solid #f0ead6 4px;
   position: absolute;
   bottom: 10vh;
   /* width: 10vw; */
   min-width: 100px;
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0);
-  color: green;
+  background-color: #f0ead6;
+  color: black;
   min-height: 30px;
+  font-weight: bold;
 }
 
 
