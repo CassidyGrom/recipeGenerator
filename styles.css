@@ -110,7 +110,7 @@ h1 {
   color: whitesmoke;
 }
 
-#navbarBasicExample {
+.darkBackground {
   background-color: rgba(0, 0, 0, 0.4)
 }
 
