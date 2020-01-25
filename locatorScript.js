@@ -48,3 +48,4 @@ map.on('load', function() {
     map.getSource('single-point').setData(e.result.geometry);
   });
 });
+
