@@ -6,6 +6,8 @@ The Recipe Generator allows you to input ingredients in your fridge, and it gene
 
 Need one more ingredient or spice to add the finishing touch? Search for a local grocery store.
 
+https://cassidygrom.github.io/recipeGenerator/index.html
+
 ## Built With
 
 - [Bulma](https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css) - The web framework used
